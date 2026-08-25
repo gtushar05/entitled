@@ -88,11 +88,92 @@
       "bytes": 744463,
       "sha256": "c35e4ae026a36394560fed7fc73f3ac771c38bcf7f3a6e9cb0344ebaf1a05805",
       "ok": true
+    },
+    "newsonair_apr2026_reform.html": {
+      "url": "https://www.newsonair.gov.in/railways-minister-ashwini-vaishnaw-launches-five-reforms-in-railways-52-reforms-in-52-weeks-drive",
+      "what": "Gov't announcement (NewsOnAir) of Apr-2026 all-trains reform \u2014 closest-to-primary until circular surfaces",
+      "regime": "apr-2026-secondary",
+      "status": 200,
+      "bytes": 79735,
+      "sha256": "459af3726663e60156c0324a33bc632cc1fdd2aa7b366a4f58f4c367674e1eba",
+      "ok": true
+    },
+    "cc_index_2026.html": {
+      "url": "https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,1,304,366,555,737,3181",
+      "what": "2026 Commercial Circulars index (node 3181) \u2014 lists CC01-11 as fetched; recheck for the April refund CC",
+      "regime": "index",
+      "status": 200,
+      "bytes": 117121,
+      "sha256": "a1921cec3349e8396c414f3221c8a06facf683ca86d92a88a9ddcd215549c5d8",
+      "ok": true
+    },
+    "wecrs_railway_act_1989.pdf": {
+      "url": "https://refunds.indianrail.gov.in/railway_act_1989.pdf",
+      "what": "Railways Act 1989 (s.60 = rulemaking power)",
+      "regime": "statute",
+      "status": 200,
+      "bytes": 286268,
+      "sha256": "a170636137b4949c9ee1704f16a7c68acc3adcef24d67cb2969d4a2c5a132a8b",
+      "ok": true
+    },
+    "wecrs_GSR_410E_24-july-1998.pdf": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/REFUND_RULES_CIRCULARS/GSR_410E_24-july-1998.pdf",
+      "what": "1998 refund rules gazette (historical)",
+      "regime": "historical",
+      "status": 200,
+      "bytes": 126256,
+      "sha256": "7f8d07433ce44d2150a0ebd7d57480699032d3631ae3b63dcbdad5bb8a0c4763",
+      "ok": true
+    },
+    "wecrs_NEW_REFUND_RULES_GAZETTE_NOTIFICATION_wef_01-07-2013.pdf": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/REFUND_RULES_CIRCULARS/NEW_REFUND_RULES_GAZETTE_NOTIFICATION_wef_01-07-2013.pdf",
+      "what": "2013 refund rules gazette (immediate predecessor of 2015)",
+      "regime": "historical",
+      "status": 200,
+      "bytes": 612033,
+      "sha256": "ffea3b4a7a83aa0a60a4c54003d1c34b10355d4c894b3cf8b9d0520c85a6a73d",
+      "ok": true
+    },
+    "wecrs_CC_01_2004.pdf": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/REFUND_RULES_CIRCULARS/CC_01_2004.pdf",
+      "what": "CC 01/2004 (historical refund circular)",
+      "regime": "historical",
+      "status": 200,
+      "bytes": 430568,
+      "sha256": "d09ddab4379a1ec19917f2970427aa8926c59c48d7a84c62ad9acd1945624803",
+      "ok": true
+    },
+    "wecrs_CC_06_2014.pdf": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/REFUND_RULES_CIRCULARS/CC_06_2014.pdf",
+      "what": "CC 06/2014 (historical refund circular)",
+      "regime": "historical",
+      "status": 200,
+      "bytes": 45843,
+      "sha256": "f321e306f6506407ede4f7bc3bc0f6835fda7331c0087243d527e4baf6c24e0d",
+      "ok": true
+    },
+    "wecrs_Circular_regarding_Refund_of_tickets_in_wake_of_COVID-19.pdf": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/Circular_regarding_Refund_of_tickets_in_wake_of_COVID-19.pdf",
+      "what": "COVID-19 special refund circular (historical exception regime)",
+      "regime": "historical",
+      "status": 200,
+      "bytes": 420939,
+      "sha256": "c60d25fb50504278d5b2dccd0b1febd796dcac932dc2ebc38edff81ab5c45a47",
+      "ok": true
+    },
+    "wecrs_SERVICE_TAX_ON_REFUND.PDF": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/REFUND_RULES_CIRCULARS/SERVICE_TAX_ON_REFUND.PDF",
+      "what": "Service tax on refunds circular",
+      "regime": "historical",
+      "status": 200,
+      "bytes": 95131,
+      "sha256": "b744921655bf399f1e193df11b9daf3c32b742815fc9e302edfa778e55568515",
+      "ok": true
     }
   },
   "verification_log": {
     "jan_2026_regime": "VERIFIED from CC 8/2026 text layer (primary): 6(4)(a) >72h -> 25%; (b) 72h-8h -> 50%; (c) <8h -> nil; 6(5) override; rule 8 proviso 8h",
-    "apr_2026_regime": "Tier structure (>72h flat / 72-24h 25% / 24-8h 50% / <8h nil; RAC/WL/Tatkal unchanged) confirmed by multiple secondary sources; PRIMARY circular/gazette NOT yet in hand -> flat minimums UNVERIFIED per pre-committed rule; Day 2: scan indianrailways.gov.in 2026 CC index",
+    "apr_2026_regime": "Tier structure (>72h flat / 72-24h 25% / 24-8h 50% / <8h nil; RAC/WL/Tatkal unchanged) confirmed by multiple secondary sources; PRIMARY circular/gazette NOT yet in hand -> flat minimums UNVERIFIED per pre-committed rule; Day 2: scan indianrailways.gov.in 2026 CC index | Day 2: 2026 CC index (node 3181) fetched - only CC01-11 listed, April refund CC not yet published there; NewsOnAir gov announcement cached as closest-to-primary; UNVERIFIED status maintained",
     "stale_official_exhibit": "irctc_eticket_cancel.html fetched this day still displays superseded 48/12/4 tiers (see sha256) - the 'official sources disagree' evidence, self-cached"
   }
 }
