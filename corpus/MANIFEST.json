@@ -1,0 +1,98 @@
+{
+  "fetch_date": "2026-08-25",
+  "documents": {
+    "refund_rules_2015_gazette.pdf": {
+      "url": "https://refunds.indianrail.gov.in/ref_rules/REFUND_RULES_CIRCULARS/RefundRules.pdf",
+      "what": "Railway Passengers (Cancellation of Ticket and Refund of Fare) Rules 2015 \u2014 G.S.R. 836(E), 29-page scanned gazette (needs OCR)",
+      "regime": "2015",
+      "status": 200,
+      "bytes": 1158600,
+      "sha256": "03d498207beaee8fab1aca3ad1000566b6673fbcb1df92aab6f2c97fea50d702",
+      "ssl": "verified-ssl",
+      "ok": true
+    },
+    "cc_65_2015.pdf": {
+      "url": "https://indianrailways.gov.in/railwayboard/uploads/directorate/traffic_comm/Comm-Cir-2015/CC_65_15.pdf",
+      "what": "Railway Board Commercial Circular 65/2015 \u2014 dissemination of the 2015 refund rules",
+      "regime": "2015",
+      "status": 200,
+      "bytes": 1038436,
+      "sha256": "c8cd34fb015faa00ee7d1356d06a54cdff1ba1e6718f334a14993f32f1f205bf",
+      "ssl": "verified-ssl",
+      "ok": true
+    },
+    "irctc_eticket_cancel.html": {
+      "url": "https://contents.irctc.co.in/en/eticketCancel.html",
+      "what": "IRCTC official e-ticket cancellation/refund policy (static HTML). NOTE: displayed stale 48/12/4 tiers as of 2026-08-24 \u2014 kept as the 'official sources disagree' exhibit",
+      "regime": "2015-as-displayed",
+      "ok": true,
+      "status": 200,
+      "bytes": 9429,
+      "sha256": "b3310961b85087319607ca8b239b1b892851a77ad61bfcf25550e1a1e04ec27e",
+      "note": "urllib returned 0 bytes (CDN bot filter); fetched via curl with browser UA"
+    },
+    "irctc_etkt_faq.pdf": {
+      "url": "https://contents.irctc.co.in/en/etktfaq.pdf",
+      "what": "IRCTC consolidated e-ticket FAQ (text PDF)",
+      "regime": "mixed",
+      "ok": true,
+      "status": 200,
+      "bytes": 513435,
+      "sha256": "92e26dd6c253e77fab809cbbe453f7589e735667327b4f209239dde7027b7c77",
+      "note": "urllib returned 0 bytes (CDN bot filter); fetched via curl with browser UA"
+    },
+    "indianrail_refund_rules.html": {
+      "url": "https://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=refund_Rules.html&locale=en",
+      "what": "CRIS passenger-enquiry portal refund rules summary (HTML)",
+      "regime": "check-on-parse",
+      "status": 200,
+      "bytes": 13990,
+      "sha256": "25115e17f94ec30dfe44a67a44e21ddb5511ae77d4f42f3ac66f6f7f03f98b47",
+      "ssl": "verified-ssl",
+      "ok": true
+    },
+    "commercial_manual_v1_index.htm": {
+      "url": "https://indianrailways.gov.in/railwayboard/uploads/codesmanual/CommManual-I/ComercialManual_index.htm",
+      "what": "Indian Railway Commercial Manual Vol I index (refund procedure = Chapter III; chapter pages fetched on parse day)",
+      "regime": "procedural",
+      "status": 200,
+      "bytes": 55578,
+      "sha256": "aee8217601f311fd06eda2752da437fff256638e5e4c0d45ccd8cd5d256c9c0a",
+      "ssl": "verified-ssl",
+      "ok": true
+    },
+    "wecrs_home.html": {
+      "url": "https://refunds.indianrail.gov.in/",
+      "what": "WECRS refunds portal homepage \u2014 public hrefs to ~14 refund-rules primary documents (1998-2020)",
+      "regime": "index",
+      "status": 200,
+      "bytes": 47440,
+      "sha256": "b68a2eb95d5374284497d4394b5300b5e79bf3fbd848c8a4c9cfbdb09c707ac8",
+      "ssl": "verified-ssl",
+      "ok": true
+    },
+    "gsr41e_2026_staffnews.html": {
+      "url": "https://www.staffnews.in/2026/01/introduction-of-vande-bharat-sleeper-express-and-amrit-bharat-express-refund.html",
+      "what": "StaffNews reproduction of CC 8/2026 announcement (secondary; led to the primary PDF)",
+      "regime": "jan-2026",
+      "status": 200,
+      "bytes": 229289,
+      "sha256": "7243e9265adf550c98ad0270e3cac8d9a33cdea9208dfaa5ce57b88b454e8fcd",
+      "ok": true
+    },
+    "cc_08_2026_gsr41e.pdf": {
+      "url": "https://www.staffnews.in/wp-content/uploads/2026/01/CC-8-of-2026.pdf",
+      "what": "PRIMARY: Railway Board Commercial Circular 08/2026 with G.S.R. 41(E) enclosed (EN+HI, text layer) \u2014 VB Sleeper/Amrit Bharat II regime VERIFIED: >72h 25%, 72-8h 50%, <8h nil; rule 6(4)+(5), rule 8 proviso",
+      "regime": "jan-2026",
+      "status": 200,
+      "bytes": 744463,
+      "sha256": "c35e4ae026a36394560fed7fc73f3ac771c38bcf7f3a6e9cb0344ebaf1a05805",
+      "ok": true
+    }
+  },
+  "verification_log": {
+    "jan_2026_regime": "VERIFIED from CC 8/2026 text layer (primary): 6(4)(a) >72h -> 25%; (b) 72h-8h -> 50%; (c) <8h -> nil; 6(5) override; rule 8 proviso 8h",
+    "apr_2026_regime": "Tier structure (>72h flat / 72-24h 25% / 24-8h 50% / <8h nil; RAC/WL/Tatkal unchanged) confirmed by multiple secondary sources; PRIMARY circular/gazette NOT yet in hand -> flat minimums UNVERIFIED per pre-committed rule; Day 2: scan indianrailways.gov.in 2026 CC index",
+    "stale_official_exhibit": "irctc_eticket_cancel.html fetched this day still displays superseded 48/12/4 tiers (see sha256) - the 'official sources disagree' evidence, self-cached"
+  }
+}

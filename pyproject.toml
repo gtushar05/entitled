@@ -1,0 +1,17 @@
+[project]
+name = "entitled"
+version = "0.1.0"
+description = "A version-aware, rules-grounded agent for Indian Railways ticket refunds — deterministic calculator, citation-grounded retrieval, frozen golden set"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+agent = ["rank-bm25", "sentence-transformers"]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
