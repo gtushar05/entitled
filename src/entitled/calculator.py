@@ -54,6 +54,7 @@ class TicketCase:
     cancellation: datetime = None    # when cancellation/TDR is presented
     disruption: str = "NONE"
     travelled: bool = False
+    chart_prepared: bool = False     # first chart is now ≥10h pre-departure (Dec-2025)
 
 
 @dataclass
@@ -136,6 +137,19 @@ def compute_refund(case: TicketCase) -> Result:
                 if case.status == "WL" else _rac_wl(case, regime, hours_before)
         return _rac_wl(case, regime, hours_before)
 
+    # ---- chart-preparation scope boundary (CNF only; RAC/WL handled above) ----
+    # After chart, online cancellation is blocked and refunds route via TDR
+    # with case-specific rules (and chart now happens ≥10h before departure,
+    # i.e. earlier than several tier boundaries). Post-chart CNF cancellation
+    # is outside the calculator's verified scope — escalate, don't guess.
+    if case.chart_prepared:
+        return Result("ESCALATE", None, None, regime, False,
+                      notes=["chart already prepared: CNF cancellation refunds "
+                             "route via TDR with case-specific rules — outside "
+                             "the calculator's verified scope",
+                             "note: since Dec-2025, first chart is prepared at "
+                             "least 10 hours before departure"])
+
     # ---- CNF quota gates ----
     if case.quota == "TQ":
         return Result("NO_REFUND", 0, _r(case.fare), regime, True,
@@ -189,6 +203,11 @@ def _cnf_2015(case: TicketCase, h: float) -> Result:
     else:
         return Result("NO_REFUND", 0, _r(case.fare), "R2015", True, citations=cite,
                       notes=["less than 4 hours before scheduled departure"])
+    if charge >= case.fare:
+        # flat minimum equals/exceeds the fare — the charge is capped at the
+        # fare (a cancellation can never cost more than was paid)
+        return Result("NO_REFUND", 0, _r(case.fare), "R2015", True, citations=cite,
+                      notes=["flat cancellation charge equals or exceeds the fare"])
     notes = ["GST on AC-class cancellation charges applies extra (not computed)"] \
         if case.cls in ("1A", "EC", "2A", "FC", "3A", "CC", "3E") else []
     return Result("COMPUTED", _r(case.fare - charge), _r(charge), "R2015", True,
@@ -242,3 +261,34 @@ def _cnf_apr2026(case: TicketCase, h: float) -> Result:
                   notes=["flat minimum non-binding here under any claimed value "
                          "(percentage charge exceeds it), so the amount is safe "
                          "despite the pending primary"])
+
+
+def compute_party(cases: list[TicketCase]) -> dict:
+    """Party/partial cancellation: per-passenger computation.
+
+    Pre-chart, partial cancellation of e-tickets (Tatkal included) is allowed
+    passenger-by-passenger at the applicable slab — so the party result is the
+    sum of individual results. The special mixed-status post-chart rule
+    (confirmed passengers on a party ticket where others are WL: full refund
+    less clerkage, 30-min cutoff, all passengers on one TDR) is out of the
+    verified scope and escalates as a party.
+    """
+    if any(c.chart_prepared for c in cases):
+        statuses = {c.status for c in cases}
+        if len(statuses) > 1:
+            return {"outcome": "ESCALATE", "results": [],
+                    "notes": ["mixed-status party ticket after chart: the "
+                              "special full-refund-less-clerkage rule applies "
+                              "with a single TDR for all passengers — manual "
+                              "review required"]}
+    results = [compute_refund(c) for c in cases]
+    total_refund = sum(r.refund for r in results if r.refund) or 0
+    escalations = [i for i, r in enumerate(results) if r.outcome == "ESCALATE"]
+    return {
+        "outcome": "ESCALATE" if escalations else "COMPUTED",
+        "results": results,
+        "total_refund": int(total_refund),
+        "escalated_passengers": escalations,
+        "notes": ["fresh e-reservation slip must be printed after partial "
+                  "cancellation"] if len(cases) > 1 else [],
+    }
