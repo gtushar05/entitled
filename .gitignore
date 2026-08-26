@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .DS_Store
+corpus/parsed/clause_emb_*.npy

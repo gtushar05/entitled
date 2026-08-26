@@ -7,5 +7,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install pytest
-      - run: pytest -q --ignore=tests/test_corpus.py   # raw corpus is local-only; clause+calculator tests run here
+      - run: pip install pytest rank-bm25 model2vec
+      - run: pytest -q --ignore=tests/test_corpus.py   # raw corpus is local-only; clause+calculator+retrieval tests run here
