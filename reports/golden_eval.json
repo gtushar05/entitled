@@ -1,0 +1,60 @@
+{
+  "n": 70,
+  "passed": 70,
+  "exact_match": 1.0,
+  "trap_accuracy": 1.0,
+  "plain_accuracy": 1.0,
+  "refund_exactness": 1.0,
+  "citation_accuracy": 1.0,
+  "dangerous_compute_count": 0,
+  "dangerous_ids": [],
+  "by_category": {
+    "APR2026": {
+      "passed": 12,
+      "total": 12
+    },
+    "CHART": {
+      "passed": 2,
+      "total": 2
+    },
+    "DISRUPTION": {
+      "passed": 6,
+      "total": 6
+    },
+    "NEEDS_INFO": {
+      "passed": 5,
+      "total": 5
+    },
+    "R2015-CNF": {
+      "passed": 23,
+      "total": 23
+    },
+    "R2015-RACWL": {
+      "passed": 7,
+      "total": 7
+    },
+    "R2015-TATKAL": {
+      "passed": 2,
+      "total": 2
+    },
+    "VB2026": {
+      "passed": 13,
+      "total": 13
+    }
+  },
+  "confusion": {
+    "COMPUTED": {
+      "COMPUTED": 43
+    },
+    "NO_REFUND": {
+      "NO_REFUND": 13
+    },
+    "ESCALATE": {
+      "ESCALATE": 9
+    },
+    "NEEDS_INFO": {
+      "NEEDS_INFO": 5
+    }
+  },
+  "failures": []
+}
