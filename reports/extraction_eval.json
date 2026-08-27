@@ -1,0 +1,428 @@
+{
+  "n": 70,
+  "outcome_accuracy": 0.9714,
+  "refund_exactness_given_outcome": 1.0,
+  "no_extraction": 0,
+  "per_case": [
+    {
+      "id": "r2015-3a-60h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3a-48h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3a-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3a-12h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3a-10h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3a-4h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3a-2h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-sl-60h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-sl-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-sl-300-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "kill-switch"
+    },
+    {
+      "id": "r2015-2s-100-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-2s-50-60h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-sl-120-60h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-1a-5000-60h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-1a-5000-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-ec-2000-10h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-2a-2400-60h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-cc-1200-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-3e-800-60h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-fc-1000-10h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-2s-500-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-sl-400-48h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-2a-2400-13h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-tq-3a-36h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "kill-switch"
+    },
+    {
+      "id": "r2015-pt-2a-60h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-wl-sl-900-e-20h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-rac-3a-1500-e-20h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-wl-sl-900-20min",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-rac-2s-100-c-40h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-wl-pt-esc",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-rac-pt-2000-e-20h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-rac-sl-500-e-25min",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-cancelled-e-sl-900",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-cancelled-c-2a-2400",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-delay-e-3a-1500",
+      "expected": "COMPUTED",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    },
+    {
+      "id": "r2015-delay-travelled",
+      "expected": "ESCALATE",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    },
+    {
+      "id": "r2015-tq-cancelled",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-cancelled-tq-c",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "r2015-chart-cnf",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "kill-switch"
+    },
+    {
+      "id": "r2015-chart-wl",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-2a-2400-102h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-2a-2400-72h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-2a-2400-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-sl-1000-4h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-8h-exact",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "ab2-3a-1500-102h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-1a-4000-102h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "ab2-sl-1000-72h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-tq-2400-36h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-rac-2400-e-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-wl-2400-e-20h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-cancelled-2400",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "vb-oos-jan",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "kill-switch"
+    },
+    {
+      "id": "apr-3a-102h",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "kill-switch"
+    },
+    {
+      "id": "apr-2a-2400-102h",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-72h-exact",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-3a-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-sl-300-36h",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-3a-12h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-sl-200-12h",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-3a-4h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-1a-5000-36h",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-tq-36h",
+      "expected": "NO_REFUND",
+      "actual": "NO_REFUND",
+      "mode": "llm"
+    },
+    {
+      "id": "apr-cancelled",
+      "expected": "COMPUTED",
+      "actual": "COMPUTED",
+      "mode": "kill-switch"
+    },
+    {
+      "id": "apr-rollout",
+      "expected": "ESCALATE",
+      "actual": "ESCALATE",
+      "mode": "llm"
+    },
+    {
+      "id": "ni-unreserved",
+      "expected": "NEEDS_INFO",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    },
+    {
+      "id": "ni-amrit-bharat",
+      "expected": "NEEDS_INFO",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    },
+    {
+      "id": "ni-missing-fare",
+      "expected": "NEEDS_INFO",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    },
+    {
+      "id": "ni-bad-class",
+      "expected": "NEEDS_INFO",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    },
+    {
+      "id": "ni-date-no-time",
+      "expected": "NEEDS_INFO",
+      "actual": "NEEDS_INFO",
+      "mode": "template"
+    }
+  ]
+}
