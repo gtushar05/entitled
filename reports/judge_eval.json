@@ -1,0 +1,249 @@
+{
+  "n": 22,
+  "validator_accuracy": 0.8181818181818182,
+  "validator_as_documented": true,
+  "rows": [
+    {
+      "case_id": "r2015-3a-36h",
+      "kind": "faithful",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "candidate": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "All rupee amounts (\u20b91,125 refund, \u20b9375 cancellation charge, \u20b91,500 fare), timing (36.0 hours), rule reference (2015/rule-6), clause citation, and GST caution note match exactly between reference and candidate."
+    },
+    {
+      "case_id": "r2015-3a-36h",
+      "kind": "wrong_refund",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "candidate": "Refund due: \u20b91,175 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "Refund amount differs: candidate states \u20b91,175 but reference (and correct calculation: \u20b91,500 - \u20b9375) shows \u20b91,125."
+    },
+    {
+      "case_id": "r2015-3a-36h",
+      "kind": "invented_percentage",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "candidate": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)\nThat works out to roughly 37% of your fare.",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "Candidate introduces an unsupported percentage: \u20b91,125 refund on \u20b91,500 fare equals 75%, not 37%."
+    },
+    {
+      "case_id": "r2015-3a-36h",
+      "kind": "dropped_citation",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "candidate": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [the applicable rule] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "Clause ID replaced with vague placeholder: reference specifies [2015/rule-6] but candidate states [the applicable rule], omitting the specific regulatory citation."
+    },
+    {
+      "case_id": "r2015-3a-36h",
+      "kind": "value_swap",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "candidate": "Refund due: \u20b9375 of the \u20b91,500 fare (cancellation charge: \u20b91,125).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: GST on AC-class cancellation charges applies extra (not computed)",
+      "gt_faithful": false,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": false,
+      "judge_reason": "The refund amount (\u20b91,125 vs \u20b9375) and cancellation charge (\u20b9375 vs \u20b91,125) are swapped between reference and candidate."
+    },
+    {
+      "case_id": "vb-2a-2400-102h",
+      "kind": "faithful",
+      "reference": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "candidate": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "Candidate matches reference exactly in all amounts (\u20b91,800 refund, \u20b9600 cancellation charge, \u20b92,400 fare), hours (102.0), rule citations, quote text, and cautionary note."
+    },
+    {
+      "case_id": "vb-2a-2400-102h",
+      "kind": "wrong_refund",
+      "reference": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "candidate": "Refund due: \u20b91,850 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "Refund amount is incorrect: candidate states \u20b91,850 but should be \u20b91,800 (\u20b92,400 fare minus 25% cancellation charge of \u20b9600)."
+    },
+    {
+      "case_id": "vb-2a-2400-102h",
+      "kind": "invented_percentage",
+      "reference": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "candidate": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))\nThat works out to roughly 37% of your fare.",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "The candidate adds an invented percentage ('roughly 37% of your fare') that has no basis in the reference and contradicts the established refund amount (\u20b91,800 is 75% of the fare, not 37%)."
+    },
+    {
+      "case_id": "vb-2a-2400-102h",
+      "kind": "dropped_citation",
+      "reference": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "candidate": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [the applicable rule] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "The candidate cites '[the applicable rule]' instead of the specific clause ID '[jan2026/6(4)(a)]' required by the reference; clause IDs must match for faithfulness."
+    },
+    {
+      "case_id": "vb-2a-2400-102h",
+      "kind": "value_swap",
+      "reference": "Refund due: \u20b91,800 of the \u20b92,400 fare (cancellation charge: \u20b9600).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "candidate": "Refund due: \u20b9600 of the \u20b92,400 fare (cancellation charge: \u20b91,800).\nCancelled 102.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(a)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) \u201c(a) if the ticket is presented for cancellation more than seventy-two hours in advance of the scheduled departure of the train, the cancellation charge shall be twenty five per cent. of the fare.\u201d\n  note: no flat-charge-only band \u2014 even early cancellation costs 25% on these trains (rule 6(4))",
+      "gt_faithful": false,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": false,
+      "judge_reason": "The refund and cancellation charge amounts are swapped: candidate states \u20b9600 refund and \u20b91,800 charge, but reference correctly states \u20b91,800 refund and \u20b9600 charge (25% of \u20b92,400 fare)."
+    },
+    {
+      "case_id": "r2015-sl-60h",
+      "kind": "faithful",
+      "reference": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "candidate": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "Refund amount (\u20b9380), total fare (\u20b9500), cancellation charge (\u20b9120), cancellation timing (60.0 hours), rule version (R2015), clause ID [2015/rule-6], and basis citation are identical between reference and candidate."
+    },
+    {
+      "case_id": "r2015-sl-60h",
+      "kind": "wrong_refund",
+      "reference": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "candidate": "Refund due: \u20b9430 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "Refund amount is \u20b9430 in candidate but \u20b9380 in reference; the rupee amount must match exactly for faithfulness."
+    },
+    {
+      "case_id": "r2015-sl-60h",
+      "kind": "invented_percentage",
+      "reference": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "candidate": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\nThat works out to roughly 37% of your fare.",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "The candidate adds 'roughly 37% of your fare,' but \u20b9380 of \u20b9500 is 76%, not 37%\u2014an invented and incorrect percentage that contradicts the stated amounts."
+    },
+    {
+      "case_id": "r2015-sl-60h",
+      "kind": "dropped_citation",
+      "reference": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "candidate": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [the applicable rule] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "The clause reference uses generic '[the applicable rule]' instead of the specific '[2015/rule-6]' from the reference."
+    },
+    {
+      "case_id": "r2015-sl-60h",
+      "kind": "value_swap",
+      "reference": "Refund due: \u20b9380 of the \u20b9500 fare (cancellation charge: \u20b9120).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "candidate": "Refund due: \u20b9120 of the \u20b9500 fare (cancellation charge: \u20b9380).\nCancelled 60.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d",
+      "gt_faithful": false,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": false,
+      "judge_reason": "The candidate swaps the refund and cancellation charge amounts: states refund as \u20b9120 and charge as \u20b9380, whereas the reference states refund as \u20b9380 and charge as \u20b9120."
+    },
+    {
+      "case_id": "apr-3a-36h",
+      "kind": "faithful",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary",
+      "candidate": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "All rupee amounts (\u20b91,125 refund, \u20b9375 charge, \u20b91,500 fare), timing (36.0 hours), rules (APR2026), caution about provisional status, basis reference (Apr-2026 reform 72/24/8), and notes are identical between candidate and reference."
+    },
+    {
+      "case_id": "apr-3a-36h",
+      "kind": "dropped_caution",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary",
+      "candidate": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nBasis:",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "The candidate drops the caution that the rule branch relies on a pending primary circular and should be treated as provisional\u2014a material omission of a condition that marks the answer as not fully faithful to the reference."
+    },
+    {
+      "case_id": "apr-3a-36h",
+      "kind": "invented_percentage",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary",
+      "candidate": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary\nThat works out to roughly 37% of your fare.",
+      "gt_faithful": false,
+      "expect_validator_pass": false,
+      "validator_pass": false,
+      "judge_faithful": false,
+      "judge_reason": "The candidate adds '37% of your fare' but the cancellation charge of \u20b9375 is 25% of the \u20b91,500 fare (and the refund is 75%), making this percentage invented or based on altered numbers."
+    },
+    {
+      "case_id": "apr-3a-36h",
+      "kind": "value_swap",
+      "reference": "Refund due: \u20b91,125 of the \u20b91,500 fare (cancellation charge: \u20b9375).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary",
+      "candidate": "Refund due: \u20b9375 of the \u20b91,500 fare (cancellation charge: \u20b91,125).\nCancelled 36.0 hours before scheduled departure, computed under the APR2026 rules.\nCAUTION: this branch relies on a rule change whose primary circular is still pending \u2014 treat as provisional.\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index\n  note: flat minimum non-binding here under any claimed value (percentage charge exceeds it), so the amount is safe despite the pending primary",
+      "gt_faithful": false,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": false,
+      "judge_reason": "The refund and cancellation charge amounts are swapped \u2014 candidate states \u20b9375 refund and \u20b91,125 cancellation charge, but reference correctly shows \u20b91,125 refund and \u20b9375 cancellation charge."
+    },
+    {
+      "case_id": "r2015-3a-4h",
+      "kind": "faithful",
+      "reference": "No refund is due. The fare of \u20b91,500 is forfeited as the cancellation charge.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: less than 4 hours before scheduled departure",
+      "candidate": "No refund is due. The fare of \u20b91,500 is forfeited as the cancellation charge.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) \u2014 OCR of gazette) \u201c6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c\u2026\u201d\n  note: less than 4 hours before scheduled departure",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "Candidate matches reference exactly: same outcome (no refund), same amount (\u20b91,500), same clause ID [2015/rule-6], and same temporal condition."
+    },
+    {
+      "case_id": "apr-3a-102h",
+      "kind": "faithful",
+      "reference": "This case cannot be answered confidently from the verified rules \u2014 it needs manual review (TDR/helpdesk).\n  \u2022 >72h tier is flat-charge-only; the flat charges for this regime are UNVERIFIED in primary sources \u2014 escalating rather than guessing (pre-committed rule)\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index",
+      "candidate": "This case cannot be answered confidently from the verified rules \u2014 it needs manual review (TDR/helpdesk).\n  \u2022 >72h tier is flat-charge-only; the flat charges for this regime are UNVERIFIED in primary sources \u2014 escalating rather than guessing (pre-committed rule)\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) \u2014 NewsOnAir gov announcement; primary circular pending on CC index",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "Candidate exactly mirrors the reference: identical outcome (manual review required), verification status (UNVERIFIED flat charges), pre-committed rule (escalate rather than guess), and basis citation (Apr-2026 reform 72/24/8, NewsOnAir announcement, pending circular)."
+    },
+    {
+      "case_id": "r2015-wl-pt-esc",
+      "kind": "faithful",
+      "reference": "This case cannot be answered confidently from the verified rules \u2014 it needs manual review (TDR/helpdesk).\n  \u2022 Premium Tatkal issues only CNF/RAC; RAC/WL PT combinations need manual review",
+      "candidate": "This case cannot be answered confidently from the verified rules \u2014 it needs manual review (TDR/helpdesk).\n  \u2022 Premium Tatkal issues only CNF/RAC; RAC/WL PT combinations need manual review",
+      "gt_faithful": true,
+      "expect_validator_pass": true,
+      "validator_pass": true,
+      "judge_faithful": true,
+      "judge_reason": "The candidate exactly matches the reference in outcome, clause details, and caution about Premium Tatkal and RAC/WL combinations."
+    }
+  ]
+}
