@@ -106,12 +106,20 @@ def score_extraction(llm=None, cases: list[dict] | None = None,
     extractor may legitimately normalize wording); refund is graded when
     the outcome matched and a number was expected. Provider-dependent."""
     cases = cases or load_golden()
-    now = now or datetime(2026, 3, 18, 12, 0)
+    fallback_now = now or datetime(2026, 3, 18, 12, 0)
     kwargs = {"llm": llm} if llm is not None else {}
     outcome_ok = refund_ok = refund_tot = no_extract = 0
     per_case = []
     for c in cases:
-        out = answer_question(c["question"], now=now, **kwargs)
+        # per-case reference time: the question says "cancel right now", so
+        # now = the case's cancellation instant (falls back if absent)
+        cnow = fallback_now
+        if c.get("now"):
+            try:
+                cnow = datetime.fromisoformat(c["now"].replace("T", " "))
+            except ValueError:
+                pass
+        out = answer_question(c["question"], now=cnow, **kwargs)
         ans = out["answer"]
         actual = out["mode"] if ans is None else ans.outcome
         exp = c["expect"]["outcome"]

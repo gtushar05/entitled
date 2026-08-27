@@ -22,6 +22,7 @@ expect:
 
 import hashlib
 import json
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,6 +48,58 @@ def E(outcome, refund=None, charge=None, regime=None, verified=None,
 
 R6 = ["2015/rule-6"]
 R9 = ["2015/rule-9"]
+
+# ---- self-contained NL question generator (Day 9) ----
+# Each question must carry an ABSOLUTE departure datetime and enough to
+# derive the cancellation time, so the extraction eval measures extraction
+# rather than penalizing under-specified prompts. Cancellation is phrased
+# as "right now" with the per-case reference time (now) set to the
+# cancellation instant — the natural framing ("I'm cancelling now").
+CLS_HUMAN = {"1A": "First AC (1A)", "EC": "Executive Chair Car",
+             "2A": "2nd AC (2A)", "FC": "First Class",
+             "3A": "3rd AC (3A)", "CC": "AC Chair Car",
+             "3E": "AC 3-Economy", "SL": "Sleeper", "2S": "Second Sitting"}
+TRAIN_HUMAN = {"REG": "a regular Mail/Express", "VBS": "a Vande Bharat Sleeper",
+               "AB2": "an Amrit Bharat 2.0 train"}
+STATUS_HUMAN = {"CNF": "confirmed", "RAC": "RAC", "WL": "waitlisted"}
+QUOTA_HUMAN = {"GN": "", "TQ": "Tatkal ", "PT": "Premium Tatkal "}
+
+
+def _human_dt(s: str) -> str:
+    try:
+        dt = datetime.fromisoformat(s.replace("T", " "))
+    except ValueError:
+        return s
+    if len(s) <= 10:                       # date only — deliberately no time
+        return dt.strftime("%-d %b %Y")
+    return dt.strftime("%-d %b %Y, %-I:%M %p")
+
+
+def make_question(p: dict) -> str:
+    cls = p.get("cls") or p.get("class")
+    cls_h = CLS_HUMAN.get(cls, f"{cls} class") if cls else "a reserved"
+    train_h = TRAIN_HUMAN.get(p.get("train_type", "REG"), p.get("train_type"))
+    status_h = STATUS_HUMAN.get(p.get("status", "CNF"), "")
+    quota_h = QUOTA_HUMAN.get(p.get("quota", "GN"), "")
+    book = {"E": "booked online", "C": "booked at the counter"}[p.get("channel", "E")]
+    ticket = f"{status_h} {quota_h}{cls_h} ticket".replace("  ", " ").strip()
+    if p.get("fare") is not None:
+        ticket += f" for ₹{p['fare']}"
+    dep = _human_dt(p["departure"])
+    q = f"I have a {ticket}, {book}, on {train_h} departing {dep}."
+    if p.get("chart_prepared"):
+        q += " The chart is already prepared."
+    disr = p.get("disruption", "NONE")
+    if disr == "TRAIN_CANCELLED":
+        q += " The railways have now cancelled the train — what refund am I due?"
+    elif disr == "DELAY_GT_3H":
+        q += (" It is running more than 3 hours late and I travelled anyway"
+              if p.get("travelled") else
+              " It is running more than 3 hours late and I decided not to travel")
+        q += " — what refund am I due?"
+    else:
+        q += " I want to cancel it right now — what refund am I due?"
+    return q
 
 CASES = [
     # ---------------- R2015 CNF general quota ----------------
@@ -420,6 +473,11 @@ CASES = [
 def main():
     ids = [c["id"] for c in CASES]
     assert len(ids) == len(set(ids)), "duplicate case ids"
+    # regenerate self-contained questions + set per-case reference time so
+    # "cancel right now" resolves to the exact cancellation instant
+    for c in CASES:
+        c["question"] = make_question(c["payload"])
+        c["now"] = c["payload"]["cancellation"]
     payload = json.dumps(CASES, indent=2, ensure_ascii=False, sort_keys=True)
     digest = hashlib.sha256(payload.encode()).hexdigest()
     doc = {"meta": {"version": 1, "n_cases": len(CASES),
