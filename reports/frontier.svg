@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" font-family="sans-serif">
+<rect width="520" height="320" fill="white"/>
+<text x="260" y="24" text-anchor="middle" font-size="15" font-weight="bold">Entitled — provider frontier</text>
+<line x1="60" y1="260" x2="460" y2="260" stroke="#333"/>
+<line x1="60" y1="60" x2="60" y2="260" stroke="#333"/>
+<text x="260" y="300" text-anchor="middle" font-size="12">p95 latency (s) →</text>
+<text x="20" y="160" text-anchor="middle" font-size="12" transform="rotate(-90 20 160)">extraction accuracy →</text>
+<circle cx="380" cy="60" r="8" fill="#2a9d8f" opacity="0.85"/><circle cx="187" cy="80" r="8" fill="#e76f51" opacity="0.85"/>
+<text x="392" y="64" font-size="12" fill="#2a9d8f">haiku ($1.30/1k)</text><text x="199" y="84" font-size="12" fill="#e76f51">sonnet ($3.41/1k)</text>
+</svg>

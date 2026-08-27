@@ -1,0 +1,250 @@
+{
+  "subset": [
+    "r2015-3a-36h",
+    "r2015-3a-4h",
+    "r2015-sl-60h",
+    "vb-2a-2400-102h",
+    "vb-8h-exact",
+    "apr-3a-36h",
+    "apr-3a-102h",
+    "r2015-cancelled-e-sl-900",
+    "ni-unreserved",
+    "r2015-wl-sl-900-e-20h"
+  ],
+  "tiers": [
+    {
+      "tier": "haiku",
+      "n": 10,
+      "pricing_date": "2026-06-24",
+      "token_source": "estimate(chars/4)",
+      "latency_mean": 31.7817,
+      "latency_p50": 28.893,
+      "latency_p95": 55.7747,
+      "extraction_accuracy": 1.0,
+      "polish_faithful_rate": 0.8889,
+      "polished_n": 9,
+      "mean_calls_per_query": 1.9,
+      "mean_cost_per_query": 0.0012979,
+      "projected_cost_per_1k": 1.2979,
+      "per_case": [
+        {
+          "id": "r2015-3a-36h",
+          "latency": 37.203192291999585,
+          "n_calls": 2,
+          "in_tok": 485,
+          "out_tok": 148,
+          "cost": 0.001225,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "r2015-3a-4h",
+          "latency": 19.9549450409977,
+          "n_calls": 2,
+          "in_tok": 462,
+          "out_tok": 212,
+          "cost": 0.001522,
+          "extract_ok": true,
+          "mode": "kill-switch"
+        },
+        {
+          "id": "r2015-sl-60h",
+          "latency": 26.19282333299634,
+          "n_calls": 2,
+          "in_tok": 465,
+          "out_tok": 189,
+          "cost": 0.0014100000000000002,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "vb-2a-2400-102h",
+          "latency": 55.774748167001235,
+          "n_calls": 2,
+          "in_tok": 496,
+          "out_tok": 149,
+          "cost": 0.001241,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "vb-8h-exact",
+          "latency": 27.823073957995803,
+          "n_calls": 2,
+          "in_tok": 453,
+          "out_tok": 185,
+          "cost": 0.001378,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "apr-3a-36h",
+          "latency": 28.89303295800346,
+          "n_calls": 2,
+          "in_tok": 491,
+          "out_tok": 194,
+          "cost": 0.001461,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "apr-3a-102h",
+          "latency": 31.33124804199906,
+          "n_calls": 2,
+          "in_tok": 456,
+          "out_tok": 168,
+          "cost": 0.0012959999999999998,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "r2015-cancelled-e-sl-900",
+          "latency": 44.52281116600352,
+          "n_calls": 2,
+          "in_tok": 482,
+          "out_tok": 201,
+          "cost": 0.001487,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "ni-unreserved",
+          "latency": 12.737509416998364,
+          "n_calls": 1,
+          "in_tok": 285,
+          "out_tok": 46,
+          "cost": 0.000515,
+          "extract_ok": true,
+          "mode": "template"
+        },
+        {
+          "id": "r2015-wl-sl-900-e-20h",
+          "latency": 33.38314908200118,
+          "n_calls": 2,
+          "in_tok": 459,
+          "out_tok": 197,
+          "cost": 0.001444,
+          "extract_ok": true,
+          "mode": "llm"
+        }
+      ]
+    },
+    {
+      "tier": "sonnet",
+      "n": 10,
+      "pricing_date": "2026-06-24",
+      "token_source": "estimate(chars/4)",
+      "latency_mean": 16.1006,
+      "latency_p50": 15.6312,
+      "latency_p95": 22.2085,
+      "extraction_accuracy": 0.9,
+      "polish_faithful_rate": 0.75,
+      "polished_n": 8,
+      "mean_calls_per_query": 1.8,
+      "mean_cost_per_query": 0.0034074,
+      "projected_cost_per_1k": 3.4074,
+      "per_case": [
+        {
+          "id": "r2015-3a-36h",
+          "latency": 14.292910290998407,
+          "n_calls": 2,
+          "in_tok": 485,
+          "out_tok": 153,
+          "cost": 0.0037500000000000003,
+          "extract_ok": true,
+          "mode": "kill-switch"
+        },
+        {
+          "id": "r2015-3a-4h",
+          "latency": 14.70212008299859,
+          "n_calls": 2,
+          "in_tok": 462,
+          "out_tok": 114,
+          "cost": 0.0030960000000000002,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "r2015-sl-60h",
+          "latency": 17.43791900100041,
+          "n_calls": 2,
+          "in_tok": 465,
+          "out_tok": 162,
+          "cost": 0.0038250000000000003,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "vb-2a-2400-102h",
+          "latency": 18.04947025000729,
+          "n_calls": 2,
+          "in_tok": 496,
+          "out_tok": 176,
+          "cost": 0.004128,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "vb-8h-exact",
+          "latency": 15.631206834004843,
+          "n_calls": 2,
+          "in_tok": 453,
+          "out_tok": 110,
+          "cost": 0.003009,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "apr-3a-36h",
+          "latency": 18.733308000999386,
+          "n_calls": 2,
+          "in_tok": 491,
+          "out_tok": 174,
+          "cost": 0.004083,
+          "extract_ok": true,
+          "mode": "llm"
+        },
+        {
+          "id": "apr-3a-102h",
+          "latency": 19.5009471660087,
+          "n_calls": 2,
+          "in_tok": 456,
+          "out_tok": 216,
+          "cost": 0.004608,
+          "extract_ok": true,
+          "mode": "kill-switch"
+        },
+        {
+          "id": "r2015-cancelled-e-sl-900",
+          "latency": 11.67178666700056,
+          "n_calls": 1,
+          "in_tok": 286,
+          "out_tok": 49,
+          "cost": 0.001593,
+          "extract_ok": false,
+          "mode": "template"
+        },
+        {
+          "id": "ni-unreserved",
+          "latency": 8.778231958996912,
+          "n_calls": 1,
+          "in_tok": 285,
+          "out_tok": 58,
+          "cost": 0.001725,
+          "extract_ok": true,
+          "mode": "template"
+        },
+        {
+          "id": "r2015-wl-sl-900-e-20h",
+          "latency": 22.20847116599907,
+          "n_calls": 2,
+          "in_tok": 459,
+          "out_tok": 192,
+          "cost": 0.004257,
+          "extract_ok": true,
+          "mode": "llm"
+        }
+      ]
+    }
+  ]
+}
