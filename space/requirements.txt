@@ -1,0 +1,4 @@
+gradio>=4.44
+rank-bm25>=0.2.2
+numpy>=1.26
+anthropic>=0.40

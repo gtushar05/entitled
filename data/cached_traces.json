@@ -1,0 +1,37 @@
+[
+  {
+    "id": "r2015-3a-36h",
+    "question": "I have a confirmed 3rd AC (3A) ticket for ₹1500, booked online, on a regular Mail/Express departing 20 Mar 2026, 6:00 PM. I want to cancel it right now — what refund am I due?",
+    "markdown": "Refund due: ₹1,125 of the ₹1,500 fare (cancellation charge: ₹375).\nCancelled 36.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) — OCR of gazette) “6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c…”\n  note: GST on AC-class cancellation charges applies extra (not computed)\n\n**🟢 COMPUTED** · regime `R2015` · primary-verified\n\n_⚙️ deterministic template (no LLM used)_"
+  },
+  {
+    "id": "r2015-3a-48h",
+    "question": "I have a confirmed 3rd AC (3A) ticket for ₹1500, booked online, on a regular Mail/Express departing 20 Mar 2026, 6:00 PM. I want to cancel it right now — what refund am I due?",
+    "markdown": "Refund due: ₹1,125 of the ₹1,500 fare (cancellation charge: ₹375).\nCancelled 48.0 hours before scheduled departure, computed under the R2015 rules.\nBasis:\n  [2015/rule-6] (Refund Rules 2015 (G.S.R. 836(E)) — OCR of gazette) “6. Refund on cancellation of unused reserved tickets.- (1) Subject to the provisions of these rules, if a confirmed ticket is presented by the passenger or his representative to a station master for c…”\n  note: GST on AC-class cancellation charges applies extra (not computed)\n\n**🟢 COMPUTED** · regime `R2015` · primary-verified\n\n_⚙️ deterministic template (no LLM used)_"
+  },
+  {
+    "id": "vb-2a-2400-72h",
+    "question": "I have a confirmed 2nd AC (2A) ticket for ₹2400, booked online, on a Vande Bharat Sleeper departing 10 Jun 2026, 6:00 PM. I want to cancel it right now — what refund am I due?",
+    "markdown": "Refund due: ₹1,200 of the ₹2,400 fare (cancellation charge: ₹1,200).\nCancelled 72.0 hours before scheduled departure, computed under the VB2026 rules.\nBasis:\n  [jan2026/6(4)(b)] (CC 08/2026 carrying G.S.R. 41(E) dated 16.01.2026 (primary, text layer)) “(b) if the ticket is presented for cancellation between seventy-two hours and upto eight hours before the scheduled departure of the train, the cancellation charge shall be fifty per cent. of the fare…”\n  note: no flat-charge-only band — even early cancellation costs 25% on these trains (rule 6(4))\n\n**🟢 COMPUTED** · regime `VB2026` · primary-verified\n\n_⚙️ deterministic template (no LLM used)_"
+  },
+  {
+    "id": "apr-sl-300-36h",
+    "question": "I have a confirmed Sleeper ticket for ₹300, booked online, on a regular Mail/Express departing 10 Jun 2026, 6:00 PM. I want to cancel it right now — what refund am I due?",
+    "markdown": "This case cannot be answered confidently from the verified rules — it needs manual review (TDR/helpdesk).\n  • 25% of fare (Rs 75) does not exceed the claimed flat minimum (Rs 120); the binding charge depends on UNVERIFIED flat minimums — escalating (pre-committed rule)\nBasis:\n  [unbound reference] Apr-2026 reform (72/24/8) — NewsOnAir gov announcement; primary circular pending on CC index\n\n**🔵 ESCALATE (manual review)** · regime `APR2026` · PROVISIONAL (primary pending)\n\n_⚙️ deterministic template (no LLM used)_"
+  },
+  {
+    "id": "r2015-cancelled-e-sl-900",
+    "question": "I have a confirmed Sleeper ticket for ₹900, booked online, on a regular Mail/Express departing 20 Mar 2026, 6:00 PM. The railways have now cancelled the train — what refund am I due?",
+    "markdown": "Refund due: ₹900 of the ₹900 fare (cancellation charge: ₹0).\nDisruption case (TRAIN_CANCELLED): the time-before-departure tiers do not apply.\nBasis:\n  [2015/rule-9] (Refund Rules 2015 (G.S.R. 836(E)) — OCR of gazette) “9. Provided that when the train is cancelled due to unforeseen circumstances such as accident, breach or flood, the ticket is surrendered within three days excluding the scheduled day of departure of …”\n  note: e-ticket: full refund is automatic, no action needed\n\n**🟢 COMPUTED** · regime `R2015` · primary-verified\n\n_⚙️ deterministic template (no LLM used)_"
+  },
+  {
+    "id": "r2015-wl-sl-900-20min",
+    "question": "I have a waitlisted Sleeper ticket for ₹900, booked online, on a regular Mail/Express departing 20 Mar 2026, 6:00 PM. I want to cancel it right now — what refund am I due?",
+    "markdown": "No refund is due. The fare of ₹900 is forfeited as the cancellation charge.\nBasis:\n  [unbound reference] 2015 Rules — RAC/WL: refund of fare less clerkage (Rs 60/passenger), up to 30 minutes before scheduled departure\n  note: past the 30-minute cutoff — no refund on cancellation; e-ticket TDR paths for exceptional cases need manual review\n\n**🟡 NO REFUND** · regime `R2015` · primary-verified\n\n_⚙️ deterministic template (no LLM used)_"
+  },
+  {
+    "id": "ni-unreserved",
+    "question": "I have a confirmed unreserved class ticket for ₹100, booked online, on a regular Mail/Express departing 20 Mar 2026, 6:00 PM. I want to cancel it right now — what refund am I due?",
+    "markdown": "I need a few details before I can compute this refund:\n  • class: unreserved tickets are outside the reserved-ticket cancellation rules this calculator covers — is this a reserved Second Sitting (2S) ticket?\nNothing is computed until these are resolved — the charge tiers are sensitive to exactly these fields.\n\n**❓ NEEDS INFO** · regime `UNDETERMINED`"
+  }
+]

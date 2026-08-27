@@ -6,3 +6,4 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 corpus/parsed/clause_emb_*.npy
+_space_build/
