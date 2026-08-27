@@ -349,5 +349,306 @@
         ]
       }
     }
+  },
+  "llm_only_on_traps": {
+    "n": 29,
+    "outcome_accuracy": 0.3103,
+    "full_accuracy": 0.3103,
+    "trap_accuracy": 0.3103,
+    "trap_n": 29,
+    "unsafe_rupee_outputs": 0,
+    "due_refunds_missed": 12,
+    "per_case": [
+      {
+        "id": "r2015-3a-48h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 1125,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-3a-12h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 750,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-3a-4h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-sl-300-36h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 180,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-2s-100-36h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 40,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-2s-50-60h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-sl-120-60h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-sl-400-48h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 280,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-wl-sl-900-20min",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-wl-pt-esc",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-rac-pt-2000-e-20h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 1940,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-rac-sl-500-e-25min",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-delay-travelled",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "NO_REFUND",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-tq-cancelled",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 1500,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-cancelled-tq-c",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "COMPUTED",
+        "exp_refund": 2400,
+        "got_refund": 2400
+      },
+      {
+        "id": "r2015-chart-cnf",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "r2015-chart-wl",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 840,
+        "got_refund": null
+      },
+      {
+        "id": "vb-2a-2400-72h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 1200,
+        "got_refund": null
+      },
+      {
+        "id": "vb-8h-exact",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "ab2-sl-1000-72h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 500,
+        "got_refund": null
+      },
+      {
+        "id": "vb-tq-2400-36h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "NO_REFUND",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 0,
+        "got_refund": null
+      },
+      {
+        "id": "vb-rac-2400-e-36h",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 2340,
+        "got_refund": null
+      },
+      {
+        "id": "vb-oos-jan",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "apr-3a-102h",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "apr-2a-2400-102h",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "apr-72h-exact",
+        "trap": true,
+        "outcome_ok": false,
+        "full_ok": false,
+        "exp_outcome": "COMPUTED",
+        "got_outcome": "ESCALATE",
+        "exp_refund": 1125,
+        "got_refund": null
+      },
+      {
+        "id": "apr-sl-300-36h",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "apr-sl-200-12h",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      },
+      {
+        "id": "apr-rollout",
+        "trap": true,
+        "outcome_ok": true,
+        "full_ok": true,
+        "exp_outcome": "ESCALATE",
+        "got_outcome": "ESCALATE",
+        "exp_refund": null,
+        "got_refund": null
+      }
+    ]
   }
 }

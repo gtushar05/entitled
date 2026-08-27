@@ -99,3 +99,14 @@ def test_score_skips_needs_info_cases():
     r = score_llm_only([GOLDEN["ni-unreserved"]], ClauseRetriever(use_dense=False),
                        llm=fake_llm("COMPUTED", 40))
     assert r["n"] == 0
+
+
+def test_due_refunds_missed_counts_abstention():
+    # golden COMPUTED refund 1125; an LLM that ESCALATES underpays the
+    # passenger — 'due refund missed', but NOT 'unsafe' (no wrong number)
+    comp = GOLDEN["r2015-3a-36h"]
+    r = score_llm_only([comp], ClauseRetriever(use_dense=False),
+                       llm=fake_llm("ESCALATE", None))
+    assert r["unsafe_rupee_outputs"] == 0
+    assert r["due_refunds_missed"] == 1
+    assert r["full_accuracy"] == 0.0

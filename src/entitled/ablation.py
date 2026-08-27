@@ -75,37 +75,52 @@ def score_llm_only(cases: list[dict], retriever: ClauseRetriever | None = None,
     retriever = retriever or ClauseRetriever(use_dense=False)
     comp = [c for c in cases
             if c["expect"]["outcome"] in ("COMPUTED", "NO_REFUND", "ESCALATE")]
-    n = len(comp)
-    outcome_ok = full_ok = trap_tot = trap_ok = unsafe = 0
-    per = []
-    for c in comp:
-        e = c["expect"]
-        a = llm_only_answer(c, retriever, llm)
-        o_ok = a["outcome"] == e["outcome"]
-        r_ok = (e["refund"] is None) or (a["refund"] == e["refund"])
-        both = o_ok and r_ok
-        outcome_ok += o_ok
-        full_ok += both
-        if c["trap"]:
-            trap_tot += 1; trap_ok += both
-        # unsafe: a rupee number the rules don't support
-        gave_number = a["refund"] is not None and a["refund"] > 0
-        if e["outcome"] in ("NO_REFUND", "ESCALATE") and gave_number:
+    per = [_grade_llm_only(c, llm_only_answer(c, retriever, llm)) for c in comp]
+    return aggregate_llm_only(per)
+
+
+def _grade_llm_only(c: dict, a: dict) -> dict:
+    e = c["expect"]
+    o_ok = a["outcome"] == e["outcome"]
+    r_ok = (e["refund"] is None) or (a["refund"] == e["refund"])
+    return {"id": c["id"], "trap": c["trap"], "outcome_ok": o_ok,
+            "full_ok": o_ok and r_ok, "exp_outcome": e["outcome"],
+            "got_outcome": a["outcome"], "exp_refund": e["refund"],
+            "got_refund": a["refund"]}
+
+
+def aggregate_llm_only(per: list[dict]) -> dict:
+    """Aggregate graded per-case rows. Two directional error metrics,
+    because on the traps the LLM-alone failure mode is abstention/denial,
+    NOT fabrication — reporting only 'unsafe' would hide the real story:
+      - unsafe_rupee_outputs: OVER-payment — a positive amount the rules
+        don't support (wrong amount on COMPUTED, or any number on
+        NO_REFUND/ESCALATE). This is the dangerous-to-the-railway error.
+      - due_refunds_missed: UNDER-payment — a refund was actually due but
+        the LLM abstained, misclassified, or gave the wrong amount. This
+        is the dangerous-to-the-passenger error.
+    Kept separate so neither direction is spun away."""
+    n = len(per)
+    trap = [p for p in per if p["trap"]]
+    unsafe = due_missed = 0
+    for p in per:
+        gave = p["got_refund"] is not None and p["got_refund"] > 0
+        if p["exp_outcome"] in ("NO_REFUND", "ESCALATE") and gave:
             unsafe += 1
-        elif e["outcome"] == "COMPUTED" and a["refund"] is not None \
-                and a["refund"] != e["refund"]:
+        elif p["exp_outcome"] == "COMPUTED" and p["got_refund"] is not None \
+                and p["got_refund"] != p["exp_refund"]:
             unsafe += 1
-        per.append({"id": c["id"], "trap": c["trap"], "outcome_ok": o_ok,
-                    "full_ok": both, "exp_outcome": e["outcome"],
-                    "got_outcome": a["outcome"], "exp_refund": e["refund"],
-                    "got_refund": a["refund"]})
+        if p["exp_outcome"] == "COMPUTED" and (p["exp_refund"] or 0) > 0 \
+                and p["got_refund"] != p["exp_refund"]:
+            due_missed += 1
     return {
         "n": n,
-        "outcome_accuracy": round(outcome_ok / n, 4) if n else None,
-        "full_accuracy": round(full_ok / n, 4) if n else None,
-        "trap_accuracy": round(trap_ok / trap_tot, 4) if trap_tot else None,
-        "trap_n": trap_tot,
+        "outcome_accuracy": round(sum(p["outcome_ok"] for p in per) / n, 4) if n else None,
+        "full_accuracy": round(sum(p["full_ok"] for p in per) / n, 4) if n else None,
+        "trap_accuracy": round(sum(p["full_ok"] for p in trap) / len(trap), 4) if trap else None,
+        "trap_n": len(trap),
         "unsafe_rupee_outputs": unsafe,
+        "due_refunds_missed": due_missed,
         "per_case": per,
     }
 
