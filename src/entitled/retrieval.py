@@ -97,16 +97,21 @@ class ClauseRetriever:
         return list(np.argsort(-sims))
 
     def search(self, query: str, k: int = 5,
-               regime: str | None = None) -> list[dict]:
+               regime: str | None = None, mode: str = "hybrid") -> list[dict]:
         """Reciprocal-rank fusion of the available rankers.
 
         RRF score = sum over rankers of 1/(60 + rank). Optionally boosts
         clauses whose regime tag matches the case's regime (soft filter:
         other regimes remain retrievable for 'what changed?' questions).
+        `mode` selects rankers for the ablation: hybrid|bm25|dense.
         """
-        rankings = [self._bm25_ranks(query)]
-        if self.dense_available:
+        rankings = []
+        if mode in ("hybrid", "bm25"):
+            rankings.append(self._bm25_ranks(query))
+        if mode in ("hybrid", "dense") and self.dense_available:
             rankings.append(self._dense_ranks(query))
+        if not rankings:                       # dense requested but unavailable
+            rankings.append(self._bm25_ranks(query))
         rrf = np.zeros(len(self.clauses))
         for ranks in rankings:
             for pos, idx in enumerate(ranks):

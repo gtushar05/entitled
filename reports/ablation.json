@@ -1,0 +1,353 @@
+{
+  "retrieval": {
+    "dense_available": true,
+    "dense_backend": "sentence-transformers/MiniLM",
+    "n_queries": 8,
+    "n_lexical": 6,
+    "n_paraphrase": 2,
+    "modes": {
+      "bm25": {
+        "recall_at_3": 0.625,
+        "hits": 5,
+        "lexical_recall": 0.8333,
+        "paraphrase_recall": 0.0,
+        "per": [
+          {
+            "query": "cancellation charge on a confirmed ticket cancel",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-6"
+            ],
+            "top3": [
+              "2015/rule-6",
+              "2015/rule-12",
+              "2015/rule-11"
+            ],
+            "hit": true
+          },
+          {
+            "query": "Vande Bharat Sleeper cancelled seventy-two hours",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(a)"
+            ],
+            "top3": [
+              "jan2026/6(4)(a)",
+              "jan2026/6(4)(b)",
+              "2015/rule-6"
+            ],
+            "hit": true
+          },
+          {
+            "query": "Vande Bharat cancelled thirty-six hours before, ",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(b)"
+            ],
+            "top3": [
+              "jan2026/6(4)(b)",
+              "2015/rule-6",
+              "jan2026/circular-cover"
+            ],
+            "hit": true
+          },
+          {
+            "query": "confirmed Vande Bharat ticket cancelled less tha",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(c)"
+            ],
+            "top3": [
+              "jan2026/circular-cover",
+              "jan2026/6(4)(c)",
+              "2015/rule-6"
+            ],
+            "hit": true
+          },
+          {
+            "query": "train cancelled by the railways, full refund of ",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-9"
+            ],
+            "top3": [
+              "2015/rule-7",
+              "2015/preamble",
+              "2015/rule-12"
+            ],
+            "hit": false
+          },
+          {
+            "query": "waitlisted or RAC ticket refund after deducting ",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-4",
+              "2015/rule-5"
+            ],
+            "top3": [
+              "2015/rule-6",
+              "2015/rule-5",
+              "2015/rule-11"
+            ],
+            "hit": true
+          },
+          {
+            "query": "how much money do I lose if I call off my trip t",
+            "difficulty": "paraphrase",
+            "target": [
+              "2015/rule-6"
+            ],
+            "top3": [
+              "irctc-stale/para-8",
+              "irctc-stale/para-1",
+              "2015/rule-11"
+            ],
+            "hit": false
+          },
+          {
+            "query": "what will I get back if I scrap a waitlisted sea",
+            "difficulty": "paraphrase",
+            "target": [
+              "2015/rule-4",
+              "2015/rule-5"
+            ],
+            "top3": [
+              "irctc-stale/para-10",
+              "irctc-stale/para-9",
+              "2015/rule-2"
+            ],
+            "hit": false
+          }
+        ]
+      },
+      "dense": {
+        "recall_at_3": 0.625,
+        "hits": 5,
+        "lexical_recall": 0.6667,
+        "paraphrase_recall": 0.5,
+        "per": [
+          {
+            "query": "cancellation charge on a confirmed ticket cancel",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-6"
+            ],
+            "top3": [
+              "jan2026/6(4)(a)",
+              "irctc-stale/para-3",
+              "jan2026/6(4)(b)"
+            ],
+            "hit": false
+          },
+          {
+            "query": "Vande Bharat Sleeper cancelled seventy-two hours",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(a)"
+            ],
+            "top3": [
+              "jan2026/circular-cover",
+              "jan2026/6(4)(a)",
+              "irctc-stale/para-4"
+            ],
+            "hit": true
+          },
+          {
+            "query": "Vande Bharat cancelled thirty-six hours before, ",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(b)"
+            ],
+            "top3": [
+              "jan2026/circular-cover",
+              "jan2026/6(4)(b)",
+              "irctc-stale/para-3"
+            ],
+            "hit": true
+          },
+          {
+            "query": "confirmed Vande Bharat ticket cancelled less tha",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(c)"
+            ],
+            "top3": [
+              "irctc-stale/para-3",
+              "jan2026/6(4)(c)",
+              "2015/rule-5"
+            ],
+            "hit": true
+          },
+          {
+            "query": "train cancelled by the railways, full refund of ",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-9"
+            ],
+            "top3": [
+              "jan2026/6(4)(c)",
+              "irctc-stale/para-11",
+              "jan2026/6(4)(a)"
+            ],
+            "hit": false
+          },
+          {
+            "query": "waitlisted or RAC ticket refund after deducting ",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-4",
+              "2015/rule-5"
+            ],
+            "top3": [
+              "2015/rule-4",
+              "2015/rule-5",
+              "irctc-stale/para-7"
+            ],
+            "hit": true
+          },
+          {
+            "query": "how much money do I lose if I call off my trip t",
+            "difficulty": "paraphrase",
+            "target": [
+              "2015/rule-6"
+            ],
+            "top3": [
+              "jan2026/6(4)(b)",
+              "jan2026/6(4)(a)",
+              "2015/rule-9"
+            ],
+            "hit": false
+          },
+          {
+            "query": "what will I get back if I scrap a waitlisted sea",
+            "difficulty": "paraphrase",
+            "target": [
+              "2015/rule-4",
+              "2015/rule-5"
+            ],
+            "top3": [
+              "2015/rule-10",
+              "2015/rule-5",
+              "2015/rule-11"
+            ],
+            "hit": true
+          }
+        ]
+      },
+      "hybrid": {
+        "recall_at_3": 0.625,
+        "hits": 5,
+        "lexical_recall": 0.8333,
+        "paraphrase_recall": 0.0,
+        "per": [
+          {
+            "query": "cancellation charge on a confirmed ticket cancel",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-6"
+            ],
+            "top3": [
+              "jan2026/6(4)(a)",
+              "jan2026/6(4)(b)",
+              "irctc-stale/para-2"
+            ],
+            "hit": false
+          },
+          {
+            "query": "Vande Bharat Sleeper cancelled seventy-two hours",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(a)"
+            ],
+            "top3": [
+              "jan2026/6(4)(a)",
+              "jan2026/circular-cover",
+              "jan2026/6(4)(b)"
+            ],
+            "hit": true
+          },
+          {
+            "query": "Vande Bharat cancelled thirty-six hours before, ",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(b)"
+            ],
+            "top3": [
+              "jan2026/6(4)(b)",
+              "jan2026/circular-cover",
+              "jan2026/6(4)(a)"
+            ],
+            "hit": true
+          },
+          {
+            "query": "confirmed Vande Bharat ticket cancelled less tha",
+            "difficulty": "lexical",
+            "target": [
+              "jan2026/6(4)(c)"
+            ],
+            "top3": [
+              "jan2026/6(4)(c)",
+              "jan2026/circular-cover",
+              "irctc-stale/para-3"
+            ],
+            "hit": true
+          },
+          {
+            "query": "train cancelled by the railways, full refund of ",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-9"
+            ],
+            "top3": [
+              "irctc-stale/para-11",
+              "irctc-stale/para-9",
+              "2015/rule-9"
+            ],
+            "hit": true
+          },
+          {
+            "query": "waitlisted or RAC ticket refund after deducting ",
+            "difficulty": "lexical",
+            "target": [
+              "2015/rule-4",
+              "2015/rule-5"
+            ],
+            "top3": [
+              "2015/rule-5",
+              "irctc-stale/para-7",
+              "2015/rule-11"
+            ],
+            "hit": true
+          },
+          {
+            "query": "how much money do I lose if I call off my trip t",
+            "difficulty": "paraphrase",
+            "target": [
+              "2015/rule-6"
+            ],
+            "top3": [
+              "jan2026/6(4)(b)",
+              "2015/rule-9",
+              "2015/rule-5"
+            ],
+            "hit": false
+          },
+          {
+            "query": "what will I get back if I scrap a waitlisted sea",
+            "difficulty": "paraphrase",
+            "target": [
+              "2015/rule-4",
+              "2015/rule-5"
+            ],
+            "top3": [
+              "2015/rule-11",
+              "2015/rule-10",
+              "2015/rule-2"
+            ],
+            "hit": false
+          }
+        ]
+      }
+    }
+  }
+}
